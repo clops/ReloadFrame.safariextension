@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        
+            safari.application.addEventListener('command', performCommand, false);
+            
+            function performCommand(event) {
+                switch(event.command){
+                    case 'reloadFrame': {
+                        safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('reloadFrame', event.userInfo);
+                        break;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body></body>
+</html>
